@@ -161,7 +161,7 @@
           WD -SD: 10 - 18
         </p>
         <a href="#contacts"  class="index-button index-button-a"><button class="index-button index-button-a" type="button">How find us</button></a>
-        <a href="#" class=" index-button index-button-a"><button class="index-button index-button-a" type="button"> Feedback </button></a>
+        <a href="#" class=" index-button index-button-a"><button class="index-button index-button-a feedbackBtn" type="button"> Feedback </button></a>
       </section>
 
 
@@ -319,8 +319,8 @@
       <b><p>ВВедите пожалуйста свой логин и пароль</p></b>
       <form   action="https://echo.htmlacademy.ru"
        method="POST" class="log-form">
-        <p> <label class="visually-hidden" for="email-inp"> Email: </label><input type="email" id="email-inp"  placeholder="Username or Email"/></p>
-        <p> <label class="visually-hidden" for="pass-inp"> Password </label><input  type="password" id="pass-inp" suggested="current-password" placeholder="Password"/></p>
+        <p> <label class="visually-hidden log-data" for="email-inp"> Email: </label><input type="email" id="email-inp"  placeholder="Username or Email"   /></p>
+        <p> <label class="visually-hidden log-data" for="pass-inp"> Password </label><input suggested= 'current-password'  type="password" id="pass-inp" suggested="current-password" placeholder="Password" /></p>
       <p class="pass-info" >
         <!-- later we can paint needble checkbox with PSEVDOCLASS -->
       <div class="pass-settings">
@@ -331,7 +331,7 @@
         </p>
       </div>
       <p><button class="index-button index-button-login" type="submit" aria-label="login-form-send-btn">Login</a></p>
-        <button class="modal-close modal-close-log"  type="button" aria-label="close-popap close-map">x</button> 
+        <button class="modal-close modal-close-log"  type="button" aria-label="close-popap close-map"></button> 
 
 
       </form>
@@ -344,13 +344,31 @@
 <!-- this is map pop up -->
     <section class="modal modal-map" >
       <h2 class="visually-hidden ">Find us</h2>
-      <p class="map-img"><a href="https://goo.gl/maps/RJ1Y5o1eFTXV2xqy9" target="_blank"><img src="./main_img/map mask.png" alt="adress"></a></p>
-      <button class="modal-close modal-close-map"  type="button" aria-label="close-popap close-map">x</button>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20340.089316402675!2d30.5510436!3d50.4129472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf6c766cb1e7%3A0xa9319cf02fc03c1b!2sSOCAR!5e0!3m2!1sru!2sua!4v1614010333919!5m2!1sru!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>    
+        <button class="modal-close modal-close-map"  type="button" aria-label="close-popap close-map">x</button>
+    </section>
+
+    <section class="feedback-block modal">
+      <h1 class="head-feedback">Feedback</h1>
+      <form action="feedback.php" method="POST">
+      <div class="sender-info">
+        <label   for="name-feedback"><input   name="feedback-name"   placeholder="Name" id="name-feedback" type="text"> </label>
+        <label for="tel-feedback"><input  name="feedback-tel"  id="tel-feedback" placeholder="Phone" type="tel"> </label>
+        <label for="email-feedback"><input  name="feedback-email"  id="email-feedback" placeholder="Email" type="email"> </label>
+      </div>
+      <div class="textarea"> <textarea  class="text-area-text" name="feedback-text" id="feedback-text" cols="30" rows="10" ></textarea></div>
+      <button type="submit" class="button-feedback">Отправить</button>
+
+    </form>
+      <button class="modal-close modal-close-feedback"  type="button" aria-label="close-popap close-map">x</button>
+
     </section>
 
     <div class="modal-overlay"></div>
    
     
+
+
   <script src="./main.js"></script>
   </body>
 </html>

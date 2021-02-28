@@ -62,3 +62,12 @@ img_slider3.addEventListener("click", function (e) {
   mainImg2.style.zIndex = "0";
   mainImg3.style.zIndex = "999";
 });
+
+window.addEventListener("keydown", (event) => {
+  if (event.keyCode === 27) {
+    modalLogin.classList.remove("login-active");
+    modalMap.classList.remove("map-active");
+    overlay.classList.remove("modal-overlay-active");
+    modalLogin.classList.remove("modal-error");
+  }
+});

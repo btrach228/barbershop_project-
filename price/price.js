@@ -36,3 +36,12 @@ closeModalMap.onclick = () => {
   modalMap.classList.remove("map-active");
   overlay.classList.remove("modal-overlay-active");
 };
+
+window.addEventListener("keydown", (event) => {
+  if (event.keyCode === 27) {
+    modalLogin.classList.remove("login-active");
+    modalMap.classList.remove("map-active");
+    overlay.classList.remove("modal-overlay-active");
+    modalLogin.classList.remove("modal-error");
+  }
+});

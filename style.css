@@ -656,16 +656,109 @@ body {
   padding: 10px 0 0 0;
 }
 
-.login_page input[type="Email"],
-.login_page input[type="Password"] {
+/* FEEDBACK */
+
+.feedback-block {
+  position: fixed;
+  top: 100px;
+  left: 500px;
+  min-width: 400px;
+  min-height: 400px;
+  transform: translateY(-2000px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 3px;
+  transition: 0.8s;
+}
+
+.button-feedback {
+  font: inherit;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 9px;
+}
+
+.button-feedback:hover,
+.button-feedback:focus {
+  background-color: #663d15;
+}
+
+.text-area-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #663d15;
+  border-radius: 11px;
+  resize: none;
+}
+
+.sender-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sender-info input {
   width: 250px;
   height: 40px;
-  border: 2px solid #000;
+  border: none;
+  border-bottom: 1px solid #000;
   background-color: #f9f6f3;
   text-transform: none;
   padding-right: 42px;
   padding-left: 3px;
   font-size: 20px;
+}
+
+.head-feedback {
+  margin: 10px 0 30px 0;
+  text-align: center;
+}
+
+.feedback-active {
+  transform: translateY(0);
+  transition: 0.5s;
+}
+
+/* -
+*/
+.login_page input[type="Email"],
+.login_page input[type="Password"] {
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: #f9f6f3;
+  text-transform: none;
+  padding-right: 42px;
+  padding-left: 3px;
+  font-size: 20px;
+}
+
+.login_page input[type="Email"]:focus,
+.login_page input[type="Password"]:focus {
+  outline: none;
+  border-color: #af1b1b;
+}
+
+.correct-data::before {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  content: "";
+  background-color: rgb(0, 255, 85);
+  display: block;
+
+  width: 14px;
+  height: 2px;
+  z-index: 999;
 }
 
 .pass-settings {
@@ -1438,4 +1531,31 @@ aside li {
 .buy-btn:focus {
   background-color: #663d15;
   transition: 0.2s;
+}
+
+/* if log or pass inpt incorrect */
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.modal-error-log {
+  animation-name: shake;
+  animation-duration: 0.7s;
 }
